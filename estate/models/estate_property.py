@@ -201,6 +201,7 @@ class EstateProperty(models.Model):
             }
 
     def open_confirm_offers(self):
+        print ("\n\ncontext is ::: ", self.env.context)
         view_id_accept = self.env.ref('estate.estate_property_offer_tree').id
         return {
             "name":"Offers",

@@ -12,8 +12,8 @@ class property_wizard(models.TransientModel):
     def action_add_offer(self):
         activeIds = self.env.context.get('active_ids')
         data={
-                'price':price,
-                'partner_id':partner_id,
+                'price':self.price,
+                'partner_id':self.partner_id,
         }
         for x in activeIds:
             self.env['estate.property.offer'].create({'price':self.price ,'partner_id': self.partner_id.id,'property_id':x})
