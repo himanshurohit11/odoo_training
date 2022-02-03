@@ -28,6 +28,23 @@
             <field name="category_id" ref="module_category_estate_property"/>
             <field name="implied_ids" eval="[(4, ref('group_estate_agent'))]"/>
         </record>
+
+
+<!-- Record Rules for Estate Property -->
+
+        <record id="estate_prperty_offer_rule_agent" model="ir.rule">
+            <field name="name">Agent Offer</field>
+            <field name="model_id" ref="model_estate_property_offer"/>
+            <field name="domain_force">[('partner_id','in', [user.partner_id.id])]</field>
+            <field name="groups" eval="[(4, ref('group_estate_agent'))]"/>
+        </record>
+
+        <record id="estate_property_offer_rule_manager" model="ir.rule">
+            <field name="name">Manager Offer</field>
+            <field name="model_id" ref="model_estate_property_offer"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('group_estate_manager'))]"/>
+        </record>
     </data>
 </odoo>
     

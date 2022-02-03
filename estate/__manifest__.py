@@ -8,6 +8,7 @@
         'security/estate_security.xml',
         'views/estate_property_view.xml',
         'views/estate_property_menus_action.xml',
+        'views/template.xml',
         'wizard/offer_wizard_view.xml',
     ],
     'depends': ['base'],

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- <template id="theme_custom.new_homepage" inherit_id="website.homepage">
+        <xpath expr="//div[@id='wrap']" position="replace">
+          <div id="wrap" class="oe_structure">
+              hello
+          </div>
+        </xpath>
+    </template> -->
+    <template id="property" name="Property">
+
+        <t t-call="website.layout">
+            <div class="container">
+                <h3 class="text-center">Real Estate Properties</h3>
+                <table class="table table-bordered mb64">
+                    <thead>
+                        <tr>
+                            <th class="text-center">
+                                Sr.No
+                            </th>
+                            <th class="text-center">
+                                Property Name
+                            </th>
+                            <th class="text-center">
+                                Description
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <t t-set="seq" t-value="1"/>
+                        <t t-foreach="properties" t-as="pro">
+                        
+                        <tr>
+                            <td>
+                                <t t-out="seq"/>
+                            </td>
+                            <td>
+                                <t t-out="pro.name"/>
+                            </td>
+
+                            <td>
+                                <t t-if="pro.description" t-out="pro.description"/>
+                                <t t-else="">No Description Available</t>
+                                <t t-out="pro.property_type_id.name"/>
+                            </td>
+                            
+
+                        <t t-set="seq" t-value="seq+1"/>
+                        </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
